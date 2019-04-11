@@ -77,11 +77,11 @@ class Field
 
         // Генерируем направление корабля случайным образом.
         // 1 - горизонтальная, 0 вертикальная
-        $direction = rand(0, 1);
-        $ship->setDirection($direction);
+        $directionX = rand(0, 1);
+        $ship->setDirection($directionX);
 
         //  Генерируем начальную позицию в зависимости от ориентации корабля
-        if ($direction == 1) {
+        if ($directionX == 1) {
             $positionX = (rand(0, 10 - $decks));
             $positionY = (rand(0, 9));
 
@@ -109,7 +109,7 @@ class Field
             }
         }
         // Созадем ореол для корабля и возвращаем результат.
-        $halo = $this->createHalo($position, $positionX, $positionY, $decks, $direction);
+        $halo = $this->createHalo($position, $positionX, $positionY, $decks, $directionX);
         $position = array_replace_recursive($halo, $position);
         return $position;
     }
@@ -132,15 +132,15 @@ class Field
      * @param $positionX
      * @param $positionY
      * @param $decks
-     * @param $direction
+     * @param $directionX
      * @return mixed
      *
      * В зависимости от направления палуб корабля получаем ореол
      *  1 горизонтальная, 0 вертикальная
      */
-    private function createHalo(array $position, $positionX, $positionY, $decks, $direction): array
+    private function createHalo(array $position, $positionX, $positionY, $decks, $directionX): array
     {
-        if ($direction == 1) {
+        if ($directionX == 1) {
             $firstPositionX = $positionX;
             $firstPositionY = $positionY;
             $lastPositionX = $positionX + $decks - 1;

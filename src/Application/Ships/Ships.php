@@ -9,7 +9,7 @@ abstract class Ships
     protected $uniqueShipName;    // Уникальное имя корабля
     protected $decks;       // Количество палуб
     protected $quantity;    // Количество кораблей
-    protected $direction;  // 1 - горизонтальная, 0 вертикальная
+    protected $directionX;  // 1 - горизонтальная, 0 вертикальная
 
     /**
      * Ships constructor.
@@ -67,11 +67,11 @@ abstract class Ships
     }
 
     /**
-     * @param mixed $direction
+     * @param mixed $directionX
      */
-    public function setDirection($direction): void
+    public function setDirection($directionX): void
     {
-        $this->direction = $direction;
+        $this->direction = $directionX;
     }
 
     /**
