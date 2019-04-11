@@ -96,7 +96,6 @@ class Field
                 if ($this->checkShipCoordinates($positionX + $i, $positionY)) {
                     $position[$positionX + $i][$positionY] = 1;
                 } else {
-                    unset($position);
                     return $this->createShipCoordinates($ship);
                 }
             }
@@ -110,7 +109,6 @@ class Field
                 if ($this->checkShipCoordinates($positionX, $positionY + $i)) {
                     $position[$positionX][$positionY + $i] = 1;
                 } else {
-                    unset($position);
                     return $this->createShipCoordinates($ship);
                 }
             }
