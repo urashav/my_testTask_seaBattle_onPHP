@@ -29,7 +29,7 @@ abstract class Ships
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return get_class($this);
     }
@@ -37,7 +37,7 @@ abstract class Ships
     /**
      * @return mixed
      */
-    public function getDecks()
+    public function getDecks(): int
     {
         return $this->decks;
     }
@@ -61,7 +61,7 @@ abstract class Ships
     /**
      * @return mixed
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->quantity;
     }
@@ -77,7 +77,7 @@ abstract class Ships
     /**
      * @return mixed
      */
-    public function getDirection()
+    public function getDirection(): int
     {
         return $this->direction;
     }

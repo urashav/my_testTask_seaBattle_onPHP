@@ -8,7 +8,7 @@ class ShipsFactory
      * @param array $ships
      * @return array
      */
-    public function createShip(array $ships)
+    public function createShip(array $ships): array
     {
         $result = [];
 
