@@ -9,6 +9,7 @@ require_once 'autoloader.php';
 
 use Application\Ships\ShipsFactory;
 
+// Вторым параметром задаем имена  и количество кораблей.
 $field = new Field(new ShipsFactory(), [
     'SingleDeck' => 4,
     'DoubleDeck' => 3,

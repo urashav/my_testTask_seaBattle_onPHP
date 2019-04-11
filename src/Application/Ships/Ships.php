@@ -19,7 +19,6 @@ abstract class Ships
      */
     public function __construct($quantity, $uniqueShipName)
     {
-
         $reflection = new \ReflectionClass($this);
         $this->shipName = $reflection->getShortName();
 
@@ -82,5 +81,4 @@ abstract class Ships
     {
         return $this->direction;
     }
-
 }

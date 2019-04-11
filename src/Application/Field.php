@@ -4,7 +4,6 @@ namespace Application;
 
 use Application\Ships\ShipsFactory;
 use Application\Ships\Ships;
-use mysql_xdevapi\Exception;
 
 class Field
 {
@@ -30,17 +29,14 @@ class Field
      */
     public function getField(): array
     {
-        if ($this->getRandomCoordinates()) {
-            return $this->field;
-        } else {
-            throw new Exception('Не удалось сгенерировать координаты!');
-        }
+        $this->setRandomCoordinates();
+        return $this->field;
     }
 
     /**
      * @return bool
      */
-    private function getRandomCoordinates(): bool
+    private function setRandomCoordinates(): void
     {
         // Генерируем матрицу координвт
         $this->field = $this->createMatrix();
@@ -50,7 +46,6 @@ class Field
         foreach (array_reverse($this->ships) as $ship) {
             $this->field = array_replace_recursive($this->field, $this->createShipCoordinates($ship));
         }
-        return true;
     }
 
     /**
@@ -73,7 +68,7 @@ class Field
      * @param Ships $ship
      * @return array
      */
-    private function createShipCoordinates(Ships $ship)
+    private function createShipCoordinates(Ships $ship): array
     {
         $position = [];
 
@@ -141,8 +136,9 @@ class Field
      * @return mixed
      *
      * В зависимости от направления палуб корабля получаем ореол
+     *  1 горизонтальная, 0 вертикальная
      */
-    private function createHalo($position, $positionX, $positionY, $decks, $direction)
+    private function createHalo(array $position, $positionX, $positionY, $decks, $direction): array
     {
         if ($direction == 1) {
             $firstPositionX = $positionX;
