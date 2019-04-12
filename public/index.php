@@ -17,6 +17,7 @@ use Core\Application;
 
 $app = new Application();
 
+// Запускаем приложение
 try {
     $app->run();
 } catch (Exception $e) {

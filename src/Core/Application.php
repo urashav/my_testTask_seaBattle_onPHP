@@ -17,6 +17,11 @@ class Application
     {
     }
 
+    // Запускаем приложение
+
+    /**
+     *
+     */
     public function run()
     {
         $this->loader();
@@ -24,17 +29,23 @@ class Application
     }
 
 
+    // автолоадер
+
+    /**
+     *
+     */
     public function loader(): void
     {
         require_once 'autoloader.php';
     }
 
     /**
-     * Возвращает URI, без крайних слэшей, в нижнем регистре.
+     *
      *
      * @return string
      */
 
+    //Возвращает URI, без крайних слэшей, в нижнем регистре.
     public function getURI(): string
     {
         if (!empty($_SERVER['REQUEST_URI'])) {
@@ -43,6 +54,9 @@ class Application
     }
 
 
+    /**
+     * Собственно роутер
+     */
     public function router(): void
     {
         switch ($this->getURI()) {

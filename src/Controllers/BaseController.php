@@ -10,6 +10,7 @@ namespace Controllers;
 
 abstract class BaseController
 {
+    // Метод редиректа
     public function redirect($uri)
     {
         header('Location: ' . $uri);
