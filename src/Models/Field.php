@@ -1,9 +1,9 @@
 <?php
 
-namespace Application;
+namespace Models;
 
-use Application\Ships\ShipsFactory;
-use Application\Ships\Ships;
+use Models\Ships\ShipsFactory;
+use Models\Ships\Ships;
 
 class Field
 {

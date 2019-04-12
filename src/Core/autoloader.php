@@ -7,10 +7,11 @@
  */
 
 spl_autoload_register(function ($class) {
-    $filename = str_replace('\\', DIRECTORY_SEPARATOR, $class).'.php';
+    $filename = BASE_DIR . '/src/';
+    $filename .= str_replace('\\', DIRECTORY_SEPARATOR, $class).'.php';
     if (file_exists($filename)) {
         require $filename;
-    }else{
+    } else {
         echo 'нет такого класса ' . $filename;
     }
 });

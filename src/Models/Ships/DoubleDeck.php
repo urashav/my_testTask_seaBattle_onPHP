@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Application\Ships;
+namespace Models\Ships;
 
 class DoubleDeck extends Ships
 {
